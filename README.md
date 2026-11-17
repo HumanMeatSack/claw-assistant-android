@@ -53,4 +53,4 @@ The original prototype was exercised on a Galaxy S24 Ultra running Android 17. S
 
 ## Credits
 
-This community preview builds on [OpenClaw](https://github.com/openclaw/openclaw). The [Android guide](android/README.md) credits the wake assets and records the pinned upstream revision. The preview source includes the upstream [MIT license](LICENSE).
+This community preview builds on [OpenClaw](https://github.com/openclaw/openclaw). The [Android guide](android/README.md) records the pinned upstream revision. See the [MIT license](LICENSE) and [third-party notices](THIRD_PARTY_NOTICES.md) for the source and wake dependencies.
