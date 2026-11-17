@@ -1,0 +1,9 @@
+{
+  "name": "aiden-voice-preview",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": { "test": "node --test" },
+  "openclaw": { "extensions": ["./index.mjs"] }
+}

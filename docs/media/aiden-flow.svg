@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="530" viewBox="0 0 1240 530" role="img" aria-labelledby="title description">
+  <title id="title">Aiden for Android</title>
+  <desc id="description">The phone handles wake detection, speech recognition, and playback. Transcribed text and replies pass between the phone and a private OpenClaw Gateway. The gateway uses a local model, with an optional explicit Codex text handoff.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#122823"/>
+      <stop offset=".73" stop-color="#111817"/>
+      <stop offset="1" stop-color="#131715"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1240" height="530" rx="34" fill="url(#background)"/>
+  <rect x="1" y="1" width="1238" height="528" rx="33" fill="none" stroke="#435551" opacity=".75"/>
+  <g font-family="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif">
+    <rect x="54" y="52" width="72" height="72" rx="21" fill="#A0F0DC"/>
+    <path d="m92 65 4.7 13.3L110 83l-13.3 4.7L92 101l-4.7-13.3L74 83l13.3-4.7L92 65Z" fill="none" stroke="#193B32" stroke-width="3.5" stroke-linejoin="round"/>
+    <path d="M105 67h9m-4.5-4.5v9" stroke="#193B32" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="74" cy="101" r="2.5" fill="#193B32"/>
+    <text x="150" y="90" fill="#F0F8F5" font-size="48" font-weight="720" letter-spacing="-1.9">Aiden for Android</text>
+    <text x="152" y="124" fill="#BFD3CD" font-size="21">Voice on your phone. OpenClaw on a host you run.</text>
+
+    <rect x="54" y="170" width="817" height="307" rx="26" fill="#16201E" stroke="#49665D" stroke-width="1.5"/>
+    <text x="79" y="203" fill="#9AE8D4" font-size="15" font-weight="700" letter-spacing="1.9">PHONE AND PRIVATE GATEWAY</text>
+
+    <rect x="78" y="224" width="306" height="218" rx="20" fill="#213430" stroke="#507269"/>
+    <rect x="101" y="249" width="24" height="34" rx="5" fill="none" stroke="#AAEDD9" stroke-width="2.5"/>
+    <path d="M110 277h6" stroke="#AAEDD9" stroke-width="2" stroke-linecap="round"/>
+    <text x="138" y="276" fill="#F3F7F6" font-size="25" font-weight="690">Android</text>
+    <path d="M102 304h258" stroke="#45605A"/>
+    <text x="102" y="338" fill="#E0EDE9" font-size="18">Side button or wake phrase</text>
+    <text x="102" y="373" fill="#C3D4CF" font-size="17">On-device speech recognition</text>
+    <text x="102" y="407" fill="#C3D4CF" font-size="17">Android text-to-speech</text>
+
+    <path d="M393 304h106m-7-5 7 5-7 5" fill="none" stroke="#85DCC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="446" y="291" text-anchor="middle" fill="#AFD4CA" font-size="13">Transcript</text>
+    <path d="M501 363H395m7-5-7 5 7 5" fill="none" stroke="#85DCC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="446" y="388" text-anchor="middle" fill="#AFD4CA" font-size="13">Reply text</text>
+
+    <rect x="510" y="224" width="336" height="218" rx="20" fill="#213430" stroke="#507269"/>
+    <path d="M535 257h25v23h-25zm0 8h25m-25 7h25m-20-12h1m-1 8h1m-1 7h1" fill="none" stroke="#AAEDD9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="575" y="276" fill="#F3F7F6" font-size="25" font-weight="690">OpenClaw Gateway</text>
+    <path d="M534 304h288" stroke="#45605A"/>
+    <text x="534" y="338" fill="#E0EDE9" font-size="18">Conversation and follow-ups</text>
+    <text x="534" y="373" fill="#C3D4CF" font-size="17">Local replies with Ollama</text>
+    <text x="534" y="407" fill="#C3D4CF" font-size="17">Optional handoff routing</text>
+
+    <path d="M881 334h48" fill="none" stroke="#E5BD81" stroke-width="2" stroke-dasharray="5 5"/>
+    <path d="m922 329 7 5-7 5" fill="none" stroke="#E5BD81" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="941" y="224" width="245" height="218" rx="20" fill="#2C281F" stroke="#9B8159"/>
+    <text x="965" y="265" fill="#F0C98F" font-size="13" font-weight="700" letter-spacing="1.1">OPTIONAL CLOUD HANDOFF</text>
+    <text x="965" y="304" fill="#FFF2DE" font-size="26" font-weight="690">Ask Codex</text>
+    <path d="M965 321h198" stroke="#69573B"/>
+    <text x="965" y="357" fill="#E8D5BA" font-size="17">Explicit text request</text>
+    <text x="965" y="391" fill="#E8D5BA" font-size="17">Answer in the same chat</text>
+  </g>
+</svg>

@@ -1,0 +1,32 @@
+{
+  "agents": {
+    "entries": {
+      "aiden-fast": {
+        "model": { "primary": "ollama/qwen3.5:latest", "fallbacks": [] },
+        "thinkingDefault": "off",
+        "params": { "num_ctx": 8192, "temperature": 0.35 },
+        "tools": { "profile": "minimal", "deny": ["*"] },
+        "skills": []
+      }
+    }
+  },
+  "models": {
+    "providers": {
+      "ollama": {
+        "baseUrl": "http://127.0.0.1:11434",
+        "apiKey": "ollama-local",
+        "api": "ollama",
+        "models": [
+          {
+            "id": "qwen3.5:latest",
+            "name": "Qwen 3.5",
+            "reasoning": false,
+            "input": ["text", "image"],
+            "contextWindow": 262144,
+            "maxTokens": 4096
+          }
+        ]
+      }
+    }
+  }
+}

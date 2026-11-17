@@ -1,0 +1,14 @@
+{
+  "plugins": {
+    "entries": {
+      "aiden-voice-preview": {
+        "enabled": true,
+        "hooks": {
+          "allowConversationAccess": true,
+          "timeouts": { "before_agent_reply": 28000 }
+        },
+        "config": { "agentId": "aiden-fast" }
+      }
+    }
+  }
+}

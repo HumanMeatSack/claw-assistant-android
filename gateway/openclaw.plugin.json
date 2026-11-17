@@ -1,0 +1,15 @@
+{
+  "id": "aiden-voice-preview",
+  "name": "Aiden Voice Preview",
+  "description": "Add read-only host checks, optional local reasoning, and optional explicit Codex answers to Aiden phone sessions.",
+  "activation": { "onStartup": true },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "agentId": { "type": "string", "pattern": "^[a-z][a-z0-9-]{0,62}$", "default": "aiden-fast" },
+      "reasoningModel": { "type": "string", "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_./:-]{0,127}$" },
+      "codexPath": { "type": "string", "pattern": "^/[^\\r\\n]+$", "maxLength": 1024 }
+    }
+  }
+}
