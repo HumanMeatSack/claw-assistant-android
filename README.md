@@ -1,6 +1,6 @@
-<h1 align="center">Aiden for Android</h1>
+<h1 align="center">Claw Assistant for Android™</h1>
 
-<p align="center"><strong>A self-hosted voice assistant for your Android Side button.</strong></p>
+<p align="center"><strong>Bring OpenClaw to your Android Side button.</strong></p>
 
 <p align="center">Developer preview · Galaxy S24 Ultra · Built on OpenClaw</p>
 
@@ -15,7 +15,7 @@
   <img src="docs/media/aiden-flow.svg" alt="Android transcribes speech locally and exchanges text with a private OpenClaw Gateway, with a local Ollama model and an optional Codex handoff" width="920">
 </p>
 
-Hold the Side button to open Aiden over the app you’re using. You can also arm **Hey Aiden** to start a live conversation while the phone is unlocked. On-device speech recognition turns your words into text. Your own OpenClaw Gateway returns a reply, and the phone reads it aloud and listens for a follow-up.
+Hold the Side button to open the assistant over the app you’re using. On-device speech recognition turns your words into text. Your own OpenClaw Gateway returns a reply, and the phone reads it aloud and listens for a follow-up. In this preview, the assistant appears as **Aiden** on your phone and wakes when you say **“Hey Aiden”** with hands-free listening armed.
 
 ## What you can try
 
@@ -54,3 +54,5 @@ The original prototype was exercised on a Galaxy S24 Ultra running Android 17. S
 ## Credits
 
 This community preview builds on [OpenClaw](https://github.com/openclaw/openclaw). The [Android guide](android/README.md) records the pinned upstream revision. See the [MIT license](LICENSE) and [third-party notices](THIRD_PARTY_NOTICES.md) for the source and wake dependencies.
+
+Android is a trademark of Google LLC.

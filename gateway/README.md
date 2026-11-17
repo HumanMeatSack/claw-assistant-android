@@ -1,4 +1,4 @@
-# Gateway setup
+# Gateway setup for Claw Assistant
 
 The Android companion uses the `aiden-fast` agent on a private, authenticated OpenClaw Gateway. The example keeps routine conversation on a local Ollama model. The optional plugin adds read-only host checks and explicit requests for a second model.
 

@@ -1,4 +1,4 @@
-# Try Aiden
+# Try Claw Assistant for Android
 
 On a paired phone with the preview selected as the Android digital assistant, hold the Side button to open the panel. To try voice wake, tap **Use screen → Hey Aiden hands-free → Start listening**, then close the panel. Keep the phone unlocked.
 

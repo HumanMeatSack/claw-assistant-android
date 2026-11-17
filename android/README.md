@@ -1,4 +1,4 @@
-# Build Aiden for Android
+# Build Claw Assistant for Android
 
 This developer preview installs as **Aiden** with package ID `ai.openclaw.app.aiden.preview`. The patch is based on [OpenClaw commit `fc23bc86`](https://github.com/openclaw/openclaw/commit/fc23bc864e4553c2d215e479eeec47b67a0bf943). Use a new checkout so you can build the preview alongside your regular OpenClaw install.
 
