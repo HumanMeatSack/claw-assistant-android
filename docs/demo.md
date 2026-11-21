@@ -1,24 +1,46 @@
 # Try Claw Assistant for Android
 
-On a paired phone with the preview selected as the Android digital assistant, hold the Side button to open the panel. To try voice wake, tap **Use screen → Hey Aiden hands-free → Start listening**, then close the panel. Keep the phone unlocked.
+Build the preview, import the verified Qwen3-4B file, enable **Use phone model**, and select Aiden as Android’s digital assistant. Use an installed offline English TTS voice, or build with optional Alba. See the [Android guide](../android/README.md).
 
-## Example conversation
+## Phone-local walkthrough
 
-These are prompts to try on your setup. Live readings will come from your own Gateway.
+1. Hold the Side button or use your configured assistant gesture. Wait for listening. If initial microphone handoff fails, tap the microphone once to retry.
+2. Ask **“Tell me a short joke.”** After the reply, ask **“Make that shorter.”** This tests local conversation and follow-up listening, rather than just a direct utility.
+3. Ask **“What is my phone’s battery level?”** Compare the result with Android. Supported exact commands can use a direct native fast path.
+4. Tap the input field and type **“Explain that again.”** With local mode enabled, the answer should appear in the panel without **Review in Aiden**. Typing ends voice mode.
+5. Open a fresh panel and ask **“Set a timer for five minutes.”** Check Android’s timer. Try **“Open Calculator.”** App handoff can end the panel conversation; it does not establish control of the app’s later screens.
+6. Close the panel and reopen it. A new voice call starts with fresh conversation context.
 
-1. Say **“Hey Aiden.”** Wait for the prompt to speak.
-2. Ask **“How much free storage does the host have?”** Use the optional Gateway plugin for this check.
-3. Ask **“Check that again.”** Aiden fetches a fresh reading from the same source when this route is available.
-4. Ask **“Think it through. I have $36, boards cost $8 each, and shipping is $5 per order. Can I afford four?”** With local reasoning enabled, Aiden can work through the numbers. Four would cost $37, and three would cost $29.
-5. Ask **“Ask Codex how the phone sends my voice request.”** With the optional Codex route enabled, the reply comes back in the same conversation. The Gateway sends the question text to Codex.
-6. Say **“Stop conversation.”**
+For wake testing, choose **Use screen → Hey Aiden hands-free → Start listening**, close the panel, and keep the phone unlocked. Say **“Hey Aiden.”** Test without another calling/recording app using the microphone. Stop with **End conversation**, **“stop conversation,”** or the wake notification’s **Stop** action.
 
-## Validation
+## Interruption and audio checks
 
-The personal prototype verified that the Side button opened the panel, the wake phrase opened it over another app, and five transcribed handset turns had corresponding Gateway replies. It also exercised local phone utilities and the Gateway lookup and Codex routes. These observations describe the prototype. Audible playback of the newer tool and Codex replies, general device compatibility, and full away-from-home voice use need separate handset tests.
+Ask for a short story, stay quiet through its ending, then try **“Actually, tell me a joke.”** Check that playback stops, the new words are retained, and listening resumes after the answer. If someone else interrupted, try **“That was somebody else, continue.”** Recovery repeats the saved answer from its beginning.
 
-The public Android patch built successfully and passed 36 focused unit tests. The APK installed on a fresh Android 36.1 ARM64 emulator. Android selected Aiden as its default assistant, and the system Assist action opened the panel over Android’s Stopwatch. Aiden’s local battery check matched Android’s reported level. The [emulator screenshot](media/panel-emulator.png) shows that run. Testing the Samsung Side button and audio on the public build requires a handset.
+Test the phone speaker first, then your usual headset. Interruption uses echo-cancelled communication capture; audio routes can affect results. A text-only or browser-audio test does not establish working barge-in.
 
-The public Gateway plugin passed seven automated tests. A fresh OpenClaw 2026.9.8 instance accepted the documented setup and persisted replies to a host storage lookup, a follow-up recheck, and a Codex request with handoff disabled. The isolated test used synthetic messages with the same Gateway parameters as the Android voice panel.
+For optional Alba, long-press a completed assistant message in full Chat and choose **Listen** to compare media playback with live conversation. The default build uses an installed offline Android voice. A private PCM16 Alba media trial was heard as normal and clear on an S24 Ultra phone speaker: 24 kHz, speed/pitch 1, 53,760 generated/written/rendered frames, 2,305 ms playback elapsed, and zero reported underruns. This does not establish the previous fault’s cause or validate every live route.
 
-Build and test the public package with the [Android guide](../android/README.md) and [Gateway guide](../gateway/README.md).
+Record the time from the end of speech to the first useful audible answer. Keep cold model loading and warm replies separate. There is no published end-to-end latency guarantee.
+
+## Optional Gateway walkthrough
+
+Configure and pair your private Gateway with the [Gateway guide](../gateway/README.md). Disable phone-local mode to exercise its conversation route, or use explicit **“Ask Codex”** when that optional integration is configured.
+
+- **“Check gateway storage.”** The optional plugin reads its host filesystem.
+- **“Check that again.”** It can fetch a fresh reading after a supported host lookup.
+- **“Think it through. I have $36, boards cost $8 each, and shipping is $5 per order. Can I afford four?”** With the optional reasoning model configured, four cost $37 and three cost $29.
+- **“Ask Codex how this Android assistant sends a voice request.”** This uses the networked Codex integration. Typed delegation remains a review draft.
+
+**Home Assistant and verified web search are not a bundled demo.** They need a separate implementation of the phone-agent lookup/control backend. The included host-check plugin is a different integration. Generated links, device claims, or tool labels do not prove that a live lookup occurred.
+
+## Validation record
+
+| Scope | Evidence |
+| --- | --- |
+| Current public source export | 239 focused Android tests passed with zero failures, errors, or skips; third-party debug APK assembly and Play debug Kotlin compilation passed. Seven Gateway tests passed. A fresh pinned checkout prepared with optional Alba matched all 106 patched source files, 17 model inputs, and seven AAR member contents used by the tested build. Default/optional asset verification, corrupt-input rejection, and existing-destination protection passed. Native panel renders were inspected in empty and compact-source states. No new emulator or public-package acoustic test is claimed. |
+| Current private development baseline | 204 focused tests passed. Phone-local text/tool paths and a fixed PCM16 media clip were exercised on an S24 Ultra. Complete live voice quality, first-entry reliability, and end-to-end latency remain only partially verified. |
+| Historical public v0.1.0 | The original public patch built and passed 36 focused Android tests. A fresh Android 36.1 ARM64 emulator selected Aiden as default assistant, opened its panel over Stopwatch, and returned a matching battery reading. The [screenshot](media/panel-emulator.png) is from that older run. |
+| Historical Gateway plugin checks | Seven tests passed. An isolated OpenClaw 2026.9.8 instance accepted the setup and persisted host-check, follow-up, and disabled-Codex-route responses. These synthetic text checks did not test handset audio. |
+
+Development-handset observations do not automatically validate the public package, its default voice, other phones, or away-from-home use. Keep build receipts separate from listening results and network-service integration tests.
